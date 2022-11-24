@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git flow</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1 class="title">Git flow</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineMax - Tudo sobre filmes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body style="display: flex; flex-direction: column; background-color: #111">
+    <!-- NavBar -->
+
+    <header
+      style="
+        display: flex;
+        background-color: #171717;
+        width: 100%;
+        height: 7vh;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <img src="./assets/images/logo.png" style="height: 4vh; margin-left: 30px" />
+
+      <ul style="list-style: none; display: flex">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Filmes<a></li>
+        <li><a href="#">Autores</a></li>
+        <li><a href="#">Sobre</a></li>
+      </ul>
+    </header>
+
+    <!-- Content -->
+
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 40px;
+      "
+    >
+      <h1 style="color: #fff">O melhor de filmes na palma da sua mão</h1>
+      <h3 style="color: #999; margin-top: 10px">
+        Pegue a sua pipoca e fique a vontade!
+      </h3>
+    </div>
+
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        justify-content: space-between;
+        /* background-color: red; */
+      "
+    >
+      <img src="./assets/images/film-2.png" style="width: 150vh; opacity: 0.3" />
+      <img src="./assets/images/film-1.png" style="height: 50vh; opacity: 0.3;" />
+    </div>
+
+    <!-- Footer -->
+
+    <footer
+      style="
+        text-align: center;
+        background-color: #171717;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        height: 15vh;
+      "
+    >
+      <img src="./assets/images/logo.png" style="height: 7vh; margin-bottom: 15px" />
+      <p style="color: #fff">CineMax - Todos os direitos reservados.</p>
+    </footer>
+  </body>
 </html>
