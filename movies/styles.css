@@ -1,70 +1,72 @@
 /*make css for my movie page*/
 
 body {
-    background-color: #111111;
-    color: #ffffff;
-    font-family: "Arial", sans-serif;
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
+  background-color: #111111;
+  color: #ffffff;
+  margin: 0;
+  font-family: sans-serif;
+  padding: 0;
 }
 
-.movies{
-    height: 100%;
-    background-color: #111111;
-    color: #fab813;
-    font-family: "Arial", sans-serif;
-    font-size: 12px;
-    display: grid; 
-    gap: 1rem; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 10px;
+h1 {
+  margin: 20px;
+}
+
+.movies {
+  height: 100%;
+  background-color: #111111;
+  color: #fab813;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 10px;
 }
 
 .movie {
-    border-color: #fab813;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
+  border-color: #fab813;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
 }
 
-
-.image-area{
-    width: 100%;
-    padding-top: calc(100% * 4/3);
-    position: relative;
+.image-area {
+  width: 100%;
+  padding-top: calc(100% * 4 / 3);
+  position: relative;
 }
 
-.image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.movie-info{
-    padding: 10px;
+.movie-info {
+  padding: 10px;
 }
 
-.movie-button-watchlist{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.movie-button-watchlist {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.movie-button{
-    background-color: #fab813;
-    color: #111111;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
+.movie-button {
+  background-color: #fab813;
+  color: #111111;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
