@@ -1,0 +1,69 @@
+
+body {
+
+    padding: 50;
+
+    margin: 50;
+
+    background: black;
+}
+
+header{
+    color: white;
+}
+
+.first{
+    font: white;
+}
+
+nav {   
+    
+    color: white;
+
+    width: 100%;
+
+    display: flex;
+
+    position: flex;
+
+    border-left: 500;
+
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+div{
+    margin-top: 500;
+}
+
+
+nav a {
+
+    color: rgb(255, 255, 255);
+
+    margin: auto 20px auto 40px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+nav li {
+
+    display: inline;
+
+    float: left;
+
+    list-style: none;
+
+    margin-left: 20px;
+
+}
+
