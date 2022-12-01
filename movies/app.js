@@ -369,8 +369,8 @@ const movies = [
       "Awards": "N/A",
       "Poster": "http://ia.media-imdb.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg",
       "Metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": "7.5",
+      "imdbVotes": "291,200",
       "imdbID": "tt1211837",
       "Type": "movie",
       "Response": "True",
@@ -397,8 +397,8 @@ const movies = [
       "Awards": "1 nomination.",
       "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjQyMzI2OTA3OF5BMl5BanBnXkFtZTgwNDg5NjQ0OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
       "Metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": "7.9",
+      "imdbVotes": "723,203",
       "imdbID": "tt3748528",
       "Type": "movie",
       "Response": "True",
@@ -427,8 +427,8 @@ const movies = [
       "Awards": "N/A",
       "Poster": "http://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
       "Metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": "7.0",
+      "imdbVotes": "121,304",
       "imdbID": "tt2094766",
       "Type": "movie",
       "Response": "True",
@@ -456,8 +456,8 @@ const movies = [
       "Awards": "N/A",
       "Poster": "http://ia.media-imdb.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_SX300.jpg",
       "Metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": "8.1",
+      "imdbVotes": "53,504",
       "imdbID": "tt3322314",
       "Type": "series",
       "totalSeasons": "1",
@@ -475,6 +475,7 @@ const movies = [
 // Create a function to create divs for each movie like this:
 {/* <div class="movie">
     <div class="image-area">
+        <h2 class="hot">Hot</h2>
         <img class="image" src="https://image.tmdb.org/t/p/w500/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg" alt="Movie poster">
         //display all the images in the array movies.Images
 
@@ -484,6 +485,11 @@ const movies = [
         <h2 class="movie-title">Raya and the Last Dragon</h2>
         <p class="movie-plot">Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.</p>
         <p class="movie-release-date">Release: 2021-03-03</p>
+
+        <div class="movie-rating">
+            <p class="movie-rating">imdbRating: 8.1</p>
+            <p class="movie-votes">imdbVotes: 1234</p>
+        </div>
     </div>
     <div class="movie-button-watchlist">
         <button class="movie-button">Add to watchlist</button>
@@ -496,37 +502,54 @@ function createMovieDivs() {
     movies.forEach(movie => {
         const movieDiv = document.createElement('div');
         movieDiv.classList.add('movie');
-        const imageAreaDiv = document.createElement('div');
-        imageAreaDiv.classList.add('image-area');
-        const image = document.createElement('img');
-        image.classList.add('image');
-        image.src = movie.Images[0];
-        imageAreaDiv.appendChild(image);
-        movieDiv.appendChild(imageAreaDiv);
-        const movieInfoDiv = document.createElement('div');
-        movieInfoDiv.classList.add('movie-info');
-        const movieTitle = document.createElement('h2');
-        movieTitle.classList.add('movie-title');
-        movieTitle.textContent = movie.Title;
-        movieInfoDiv.appendChild(movieTitle);
+        if(movie.imdbRating >= 8) {
+          const hotClass = document.createElement('h2');
+          hotClass.classList.add('hot');
+          hotClass.textContent = 'Hot';
+          movieDiv.appendChild(hotClass);
+        }
+        const imageArea = document.createElement('div');
+        imageArea.classList.add('image-area');
+        movieDiv.appendChild(imageArea);
+        const movieImage = document.createElement('img');
+        movieImage.classList.add('image');
+        movieImage.src = movie.Images[0];
+        imageArea.appendChild(movieImage);
+        const movieInfo = document.createElement('div');
+        movieInfo.classList.add('movie-info');
+        movieDiv.appendChild(movieInfo);
+        const movieTitle2 = document.createElement('h2');
+        movieTitle2.classList.add('movie-title');
+        movieTitle2.textContent = movie.Title;
+        movieInfo.appendChild(movieTitle2);
         const moviePlot = document.createElement('p');
         moviePlot.classList.add('movie-plot');
         moviePlot.textContent = movie.Plot;
-        movieInfoDiv.appendChild(moviePlot);
+        movieInfo.appendChild(moviePlot);
         const movieReleaseDate = document.createElement('p');
         movieReleaseDate.classList.add('movie-release-date');
-        movieReleaseDate.textContent = `Release: ${movie.Released}`;
-        movieInfoDiv.appendChild(movieReleaseDate);
-        movieDiv.appendChild(movieInfoDiv);
-        const movieButtonWatchlistDiv = document.createElement('div');
-        movieButtonWatchlistDiv.classList.add('movie-button-watchlist');
+        movieReleaseDate.textContent = movie.Released;
+        movieInfo.appendChild(movieReleaseDate);
+        const movieRating = document.createElement('div');
+        movieRating.classList.add('movie-rating');
+        movieInfo.appendChild(movieRating);
+        const movieRating2 = document.createElement('p');
+        movieRating2.classList.add('movie-rating');
+        movieRating2.textContent = `imdbRating: ${movie.imdbRating}`;
+        movieRating.appendChild(movieRating2);
+        const movieVotes = document.createElement('p');
+        movieVotes.classList.add('movie-votes');
+        movieVotes.textContent = `imdbVotes: ${movie.imdbVotes}`;
+        movieRating.appendChild(movieVotes);
+        const movieButtonWatchlist = document.createElement('div');
+        movieButtonWatchlist.classList.add('movie-button-watchlist');
+        movieDiv.appendChild(movieButtonWatchlist);
         const movieButton = document.createElement('button');
-        movieButton.onclick = buttonAlert;        
         movieButton.classList.add('movie-button');
         movieButton.textContent = 'Add to watchlist';
-        movieButtonWatchlistDiv.appendChild(movieButton);
-        movieDiv.appendChild(movieButtonWatchlistDiv);
-        moviesContainer.appendChild(movieDiv);
+        movieButtonWatchlist.appendChild(movieButton);
+        moviesContainer.appendChild(movieDiv);       
+
     });
 }
 
